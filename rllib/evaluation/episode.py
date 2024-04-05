@@ -137,7 +137,6 @@ class Episode:
         Returns:
             The policy ID for the specified agent.
         """
-
         # Perform a new policy_mapping_fn lookup and bind AgentID for the
         # duration of this episode to the returned PolicyID.
         if agent_id not in self._agent_to_policy:

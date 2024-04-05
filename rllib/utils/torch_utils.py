@@ -149,6 +149,8 @@ def convert_to_torch_tensor(x: TensorStructType, device: Optional[str] = None):
                 tensor = torch.from_numpy(item)
         # Everything else: Convert to numpy, then wrap as torch tensor.
         else:
+            if item==None:
+                item = False
             tensor = torch.from_numpy(np.asarray(item))
         # Floatify all float64 tensors.
         if tensor.dtype == torch.double:
